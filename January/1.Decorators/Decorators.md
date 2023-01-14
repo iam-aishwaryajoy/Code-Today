@@ -9,5 +9,6 @@ You can see an example of decorators:
 ![Code_1](archive/factorial_and_time.png)
 
 And its result:
+
 ![Code_1_output](archive/output_1.png)
 
