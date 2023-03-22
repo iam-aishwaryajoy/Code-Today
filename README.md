@@ -6,14 +6,14 @@
 * Running command: ./run.sh
 
 
-#Topics in order:
+# Topics in order:
   * Graph
   * BFS
   * DFS 
   * Bipartite checking
   * Topological Sorting
   * Minimum spnning tree
-  * Dijkstras algorithm
+  * Dijkstras algorithm (Optimal path)
   * Strongly connected components
-  * Floyd Warshall algorithm
-  * Bellman Ford algorithm
+  * Floyd Warshall algorithm (Optimal path)
+  * Bellman Ford algorithm (Optimal path)
