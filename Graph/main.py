@@ -1,4 +1,4 @@
-from graph import *
+from import_library import *
 
 if __name__ == "__main__":
     graph = Graph()
@@ -15,6 +15,10 @@ if __name__ == "__main__":
     graph.create_links_automatically(node_length=6, self_loop=False)
     graph.print_g()
     bfs = BFS(graph.graph)
+    dfs = DFS(graph.graph)
     root_node = graph.find_root_node()
     bfs.do_bfs(root_node)
+    print(" BFS of the graph=" ,bfs.bfs)
+    dfs.do_dfs(root_node)
+    print(" DFS of the graph=" ,dfs.dfs)
     graph.print_graph()

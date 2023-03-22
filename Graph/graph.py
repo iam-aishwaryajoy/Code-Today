@@ -1,6 +1,4 @@
-from bfs import *
 from import_library import *
-from node import *
 
 
 class Graph:
@@ -101,19 +99,25 @@ class Graph:
 
     def find_root_node(self):
         for key,val in self.graph.items():
-            if not val.parents and len(val.children)>1:
+            if not val.parents and len(val.children)>=2:
+                log.debug("KEY_2:{}".format(key))
                 return key
         for key,val in self.graph.items():
-            if not val.parents:
+            if not val.parents and len(val.children)==1:
+                log.debug("KEY_1:{}".format(key))
                 return key
             
         for key,val in self.graph.items():
-            if not val.parents and len(val.children)>0:
+            if not val.parents:
+                log.debug("KEY_0:{}".format(key))
                 return key
         for key,val in self.graph.items():
+            log.debug("KEY:{}".format(key))
             return key
 
     def print_g(self):
+        graph = {}
         for key, val in self.graph.items():
-            print(key, val.name)
+            graph[key]= val.name
+        print("Graph:", graph)
 

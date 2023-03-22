@@ -1,43 +1,44 @@
-DEBUG:root:Choice:['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-DEBUG:root:Choice:['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-DEBUG:root:Key:0, Name:N, Choice:ABCDEFGHIJKLMOPQRSTUVWXYZ
-DEBUG:root:Choice:['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-DEBUG:root:Key:1, Name:B, Choice:ACDEFGHIJKLMOPQRSTUVWXYZ
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'Y', 'Z']
-DEBUG:root:Key:2, Name:X, Choice:ACDEFGHIJKLMOPQRSTUVWYZ
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'Y', 'Z']
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'Y', 'Z']
-DEBUG:root:Key:3, Name:W, Choice:ACDEFGHIJKLMOPQRSTUVYZ
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'Y', 'Z']
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'T', 'U', 'V', 'Y', 'Z']
-DEBUG:root:Key:4, Name:S, Choice:ACDEFGHIJKLMOPQRTUVYZ
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'T', 'U', 'V', 'Y', 'Z']
-DEBUG:root:Choice:['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'M', 'O', 'P', 'Q', 'R', 'T', 'U', 'V', 'Y', 'Z']
-DEBUG:root:Key:5, Name:K, Choice:ACDEFGHIJLMOPQRTUVYZ
 DEBUG:root: Initial Parent stack:[0, 1, 2, 3, 4, 5]
 DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
-DEBUG:root: Child stack after deleting parent:[0, 1, 3, 4, 5]
-DEBUG:root: PARENT:X, CHILD:N
-DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
 DEBUG:root: Child stack after deleting parent:[0, 2, 3, 4, 5]
-DEBUG:root: PARENT:B, CHILD:S
+DEBUG:root: PARENT:I, CHILD:W
 DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
 DEBUG:root: Child stack after deleting parent:[0, 1, 2, 4, 5]
-DEBUG:root: PARENT:W, CHILD:B
+DEBUG:root: PARENT:A, CHILD:I
+DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root: Child stack after deleting parent:[0, 1, 3, 4, 5]
+DEBUG:root: PARENT:W, CHILD:M
+DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root: Child stack after deleting parent:[0, 2, 3, 4, 5]
+DEBUG:root: Child stack after deleting children:[0, 3, 4, 5]
+DEBUG:root: PARENT:I, CHILD:A
 DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
 DEBUG:root: Child stack after deleting parent:[0, 1, 2, 4, 5]
 DEBUG:root: Child stack after deleting children:[0, 2, 4, 5]
-DEBUG:root: PARENT:W, CHILD:X
+DEBUG:root: PARENT:A, CHILD:H
 DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
-DEBUG:root: Child stack after deleting parent:[0, 1, 2, 3, 5]
-DEBUG:root: PARENT:S, CHILD:N
+DEBUG:root: Child stack after deleting parent:[0, 1, 3, 4, 5]
+DEBUG:root: Child stack after deleting children:[1, 3, 4, 5]
+DEBUG:root: PARENT:W, CHILD:C
 DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
-DEBUG:root: Key: 5, Parent stack:[0, 1, 2, 3, 4], parents:[], children:[], Name:K
-DEBUG:root:CHILD:K, PARENT:S
-DEBUG:root: BFS of the graph= ['W', 'B', 'X', 'S', 'N', 'K']
+DEBUG:root: Child stack after deleting parent:[1, 2, 3, 4, 5]
+DEBUG:root: PARENT:M, CHILD:W
+DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root:KEY:0
 DEBUG:graphviz._tools:os.makedirs('results')
 DEBUG:graphviz.saving:write lines to 'results/Digraph.gv'
 DEBUG:graphviz.backend.execute:run [PosixPath('dot'), '-Kdot', '-Tjpg', '-O', 'Digraph.gv']
 DEBUG:graphviz.backend.viewing:view: ['xdg-open', 'results/Digraph.gv.jpg']
+DEBUG:root: Initial Parent stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root: Child stack after deleting parent:[0, 2, 3, 4, 5]
+DEBUG:root: PARENT:Q, CHILD:Z
+DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root: Child stack after deleting parent:[0, 2, 3, 4, 5]
+DEBUG:root: Child stack after deleting children:[0, 2, 4, 5]
+DEBUG:root: PARENT:Q, CHILD:C
+DEBUG:root: Initial child stack:[0, 1, 2, 3, 4, 5]
+DEBUG:root: Key: 0, Parent stack:[1, 2, 3, 4, 5], parents:[], children:[], Name:G
+DEBUG:root:CHILD:G, PARENT:M
+DEBUG:root: Key: 4, Parent stack:[0, 1, 2, 3, 5], parents:[], children:[], Name:X
+DEBUG:root:CHILD:X, PARENT:G

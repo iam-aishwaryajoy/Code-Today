@@ -5,12 +5,12 @@ class BFS:
         self.graph = graph
         self.visited = []
         self.queue  = []
+        self.bfs = []
     
     def do_bfs(self, start_node_idx):
         key = start_node_idx
         self.queue.append(key)
         self.visited.append(key)
-        self.bfs = []
 
         while self.queue:
             current_node_idx = self.queue.pop(0)
@@ -22,5 +22,4 @@ class BFS:
                     self.visited.append(child_idx)
                     self.queue.append(child_idx)
 
-        log.debug(" BFS of the graph= {}".format(self.bfs))
 

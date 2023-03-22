@@ -1,14 +1,15 @@
 digraph {
-	N
-	B
-	X
+	M
+	I
 	W
-	S
-	K
-	B -> S
-	X -> N
-	W -> B
-	W -> X
-	S -> N
-	S -> K
+	A
+	H
+	C
+	M -> W
+	I -> W
+	I -> A
+	W -> M
+	W -> C
+	A -> I
+	A -> H
 }
