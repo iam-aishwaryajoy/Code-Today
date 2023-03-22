@@ -10,14 +10,14 @@ BREADTH FIRST SEARCH:
 * Time complexity = O(V^2) when adjacency matrix is used
 * Siblings are visited before children
 
-#Advantages:
+# Advantages:
 * When target is close to source BFS is preffered than DFS.
 
-#Disadvantage:
+# Disadvantage:
 * Slow because space complexity is high
 * More memory
 
-#Application:
+# Application:
 * Cycle detection in unididrected graph
 * Shortest path
 * In GPS, to find nieghbouring place.
