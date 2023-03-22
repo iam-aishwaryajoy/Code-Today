@@ -1,6 +1,19 @@
 # Code-Today
 
 
-* All the code files are inside Graph/. 
+* Code files are inside Graph/. 
 * Notes inside Graph/learnings/
-* Running command is ./run.sh
+* Running command: ./run.sh
+
+
+#Topics in order:
+  * Graph
+  * BFS
+  * DFS 
+  * Bipartite checking
+  * Topological Sorting
+  * Minimum spnning tree
+  * Dijkstras algorithm
+  * Strongly connected components
+  * Floyd Warshall algorithm
+  * Bellman Ford algorithm
