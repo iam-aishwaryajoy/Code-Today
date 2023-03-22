@@ -11,19 +11,19 @@
 * Use backtracking
 
 
-##Advantages:
+# Advantages:
     * Use less memory
     * At a time it stores only single path from root to leaf. Hence lesser space.
     * Fast
     * When target is far from source, DFS is preffered.
 
 
-##Disadvantages
+# Disadvantages
     * Not optimal for finding shortest path
     * Takes time to visit neighbouring node if depth is high.
 
 
-##Application:
+# Application:
     * Maze or sudoko
     * Topological sorting
     * Cycle detection
