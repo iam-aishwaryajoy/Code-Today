@@ -1,14 +1,13 @@
 digraph {
-	W
-	T
-	L
-	D
-	J
-	Z
-	T -> J
-	T -> L
-	L -> W
-	D -> L
-	D -> T
-	Z -> L
+	E
+	S
+	K
+	F
+	R
+	P
+	S -> P
+	K -> S
+	F -> P
+	F -> S
+	P -> E
 }

@@ -1,8 +1,7 @@
-import graphviz
-import string
-import random
-import numpy as np
 from bfs import *
+from import_library import *
+from node import *
+
 
 class Graph:
     def __init__(self):
@@ -13,13 +12,12 @@ class Graph:
     
     def create_graph(self, nodes):
         for ids, name in nodes.items():
-            #self.key = self.key + 1
             self.key = ids
             self.idx_list.append(self.key)
-            node = self.Node(self.key, name)
+            node = Node(self.key, name)
             self.nodes.append(node)
             self.graph[self.key] = node
-        #print(self.graph)
+    
     def delete_val(self, stack, value):
         if value in stack:
            stack.remove(value)
@@ -34,7 +32,7 @@ class Graph:
             choice = ''.join(str(e) for e in choice)
             self.key = key
             self.idx_list.append(self.key)
-            node = self.Node(self.key, name)
+            node = Node(self.key, name)
             self.nodes.append(node)
             self.graph[self.key] = node
 
@@ -48,32 +46,34 @@ class Graph:
             visited[n] = 0
         parent_stack = np.arange((node_length))
         parent_stack = parent_stack.tolist()
-        child_stack = np.arange((node_length))
-        child_stack = child_stack.tolist()
-        print('Parent stack:', parent_stack)
-        print('Child stack:', child_stack)
-        links = node_length*2
+        print('Initial Parent stack:', parent_stack)
+        links = (node_length+2)
         for link in range(links):
             parent = random.choice(parent_stack)
+            child_stack = np.arange((node_length))
+            child_stack = child_stack.tolist()
+            print('Initial child stack:', child_stack)
             if visited[parent] < 2:
                 visited[parent] = visited[parent] + 1
                 child_stack = self.delete_val(child_stack, parent)
+                print('Child stack after deleting parent:', child_stack)
                 for ch in self.graph[parent].children:
-                    child_stack = self.delete_val(child_stack, ch)
+                    child_stack = self.delete_val(child_stack, ch.id)
+                    print('Child stack after deleting children:', child_stack)
                 child = random.choice(child_stack)
             else:
                 parent_stack = self.delete_val(parent_stack, parent)
                 break
-            print('Parent stack:', parent_stack)
-            print('Child stack:', child_stack)
+            print("PARENT:", self.graph[parent].name, "CHILD:", self.graph[child].name)
             self.add_child(parent,child)
 
 
     def add_child(self, parent_key, child_key):
         if parent_key in self.idx_list and child_key in self.idx_list:        
             self.nodes[parent_key].children.append(self.nodes[child_key])
+            self.nodes[child_key].parents.append(self.nodes[parent_key])
         else:
-            print("The keys", parent_key, " " ,child_key, "are not available")
+            print("The keys", parent_key, "or" ,child_key, "are not available")
 
     def print_graph(self):
         dot = graphviz.Digraph()
@@ -81,32 +81,18 @@ class Graph:
             dot.node(parent.name)
         for key, parent in self.graph.items():
             for child in parent.children:
-                #print(parent.name, "->", child.name)
                 dot.edge(parent.name, child.name)
         print(dot.source)
         dot.render(directory='results', view=True, format='jpg')
 
-    class Node:
-        def __init__(self, ids, name):
-            self.id = ids
-            self.name = name
-            self.children = []
+    def find_root_node(self):
+        for key,val in self.graph.items():
+            if not val.parents and len(val.children)>1:
+                return key
+        for key,val in self.graph.items():
+            if not val.parents:
+                return key
+            
 
-
-if __name__ == "__main__":
-    graph = Graph()
-    #graph.create_graph({0:'A',1:'B',2:'C',3:'D',4:'E',5:'F'})
-
-    graph.create_graph_automatically(node_length=6)
-    #graph.add_child(0,1)
-    #graph.add_child(0,2)
-    #graph.add_child(2,4)
-    #graph.add_child(1,3)
-    #graph.add_child(3,5)
-    #graph.add_child(6,4)
-    graph.create_links_automatically(node_length=6, self_loop=False)
-    bfs = BFS(graph.graph)
-    bfs.do_bfs(0)
-    graph.print_graph()
 
 
