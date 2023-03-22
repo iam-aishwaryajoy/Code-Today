@@ -27,45 +27,59 @@ class Graph:
         choice = string.ascii_uppercase
         for key in range(node_length):
             name = random.choice(choice)
-            choice = choice.split()
+            choice = [*choice]
+            #log.debug("Choice:{}".format(choice))
             choice = self.delete_val(choice, name)
+            #log.debug("Choice:{}".format(choice))
             choice = ''.join(str(e) for e in choice)
             self.key = key
             self.idx_list.append(self.key)
             node = Node(self.key, name)
             self.nodes.append(node)
             self.graph[self.key] = node
+            #log.debug("Key:{}, Name:{}, Choice:{}".format(key, name, choice))
 
     def find_random_value(self, node_length):
         return random.randint(0, node_length)
 
-            
+    def handle_single_nodes(self, node_length):
+        for key, node in self.graph.items():
+            parent_stack = np.arange((node_length))
+            parent_stack = parent_stack.tolist()
+            if not node.parents and not node.children:
+                parent_stack = self.delete_val(parent_stack, key)
+                parent = random.choice(parent_stack)
+                log.debug(" Key: {}, Parent stack:{}, parents:{}, children:{}, Name:{}".format(key, parent_stack, node.parents, node.children, node.name))
+                self.add_child(parent, key)
+                log.debug("CHILD:{}, PARENT:{}".format(self.graph[key].name,self.graph[parent].name))
+                
     def create_links_automatically(self, node_length, self_loop=False):
         visited = {}
         for n in range(node_length):
             visited[n] = 0
         parent_stack = np.arange((node_length))
         parent_stack = parent_stack.tolist()
-        print('Initial Parent stack:', parent_stack)
-        links = (node_length+2)
+        log.debug(' Initial Parent stack:{}'.format(parent_stack))
+        links = (node_length*2)
         for link in range(links):
             parent = random.choice(parent_stack)
             child_stack = np.arange((node_length))
             child_stack = child_stack.tolist()
-            print('Initial child stack:', child_stack)
+            log.debug(' Initial child stack:{}'.format(child_stack))
             if visited[parent] < 2:
                 visited[parent] = visited[parent] + 1
                 child_stack = self.delete_val(child_stack, parent)
-                print('Child stack after deleting parent:', child_stack)
+                log.debug(' Child stack after deleting parent:{}'.format(child_stack))
                 for ch in self.graph[parent].children:
                     child_stack = self.delete_val(child_stack, ch.id)
-                    print('Child stack after deleting children:', child_stack)
+                    log.debug(' Child stack after deleting children:{}'.format(child_stack))
                 child = random.choice(child_stack)
             else:
                 parent_stack = self.delete_val(parent_stack, parent)
                 break
-            print("PARENT:", self.graph[parent].name, "CHILD:", self.graph[child].name)
+            log.debug(" PARENT:{}, CHILD:{}".format(self.graph[parent].name, self.graph[child].name))
             self.add_child(parent,child)
+        self.handle_single_nodes(node_length)
 
 
     def add_child(self, parent_key, child_key):
@@ -93,6 +107,13 @@ class Graph:
             if not val.parents:
                 return key
             
+        for key,val in self.graph.items():
+            if not val.parents and len(val.children)>0:
+                return key
+        for key,val in self.graph.items():
+            return key
 
-
+    def print_g(self):
+        for key, val in self.graph.items():
+            print(key, val.name)
 

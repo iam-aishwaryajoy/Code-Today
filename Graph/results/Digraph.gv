@@ -1,13 +1,14 @@
 digraph {
-	E
+	N
+	B
+	X
+	W
 	S
 	K
-	F
-	R
-	P
-	S -> P
-	K -> S
-	F -> P
-	F -> S
-	P -> E
+	B -> S
+	X -> N
+	W -> B
+	W -> X
+	S -> N
+	S -> K
 }

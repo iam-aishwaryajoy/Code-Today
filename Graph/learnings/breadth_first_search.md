@@ -2,7 +2,7 @@ BREADTH FIRST SEARCH:
 =====================
 
 * Used to traverse a graph or tree. Traversing means visiting each node of the graph.
-* Not Recursive 
+* Recursive algorithm, but not a backtracking algorithm
 * BFS uses Queue to find shortest path.
 * All nodes in the same level is visited first
 * FIFO principle

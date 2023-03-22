@@ -1,3 +1,5 @@
+from import_library import *
+
 class BFS:
     def __init__(self, graph):
         self.graph = graph
@@ -8,11 +10,11 @@ class BFS:
         key = start_node_idx
         self.queue.append(key)
         self.visited.append(key)
+        self.bfs = []
 
-        print("BFS of the graph:")
         while self.queue:
             current_node_idx = self.queue.pop(0)
-            print(self.graph[current_node_idx].name, " ")
+            self.bfs.append(self.graph[current_node_idx].name)
         
             for child in self.graph[current_node_idx].children:
                 child_idx = child.id
@@ -20,7 +22,5 @@ class BFS:
                     self.visited.append(child_idx)
                     self.queue.append(child_idx)
 
-                
-            
-        
+        log.debug(" BFS of the graph= {}".format(self.bfs))
 
