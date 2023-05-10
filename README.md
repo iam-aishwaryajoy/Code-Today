@@ -1,5 +1,5 @@
 # Code-Today 
-Personilised Github Center for variety of coding topics. THis is not an offcial site.
+Personilised Github Center for variety of coding topics. 
 
 Content:
 * DEEP LEARNING - Deep Learning Projects
